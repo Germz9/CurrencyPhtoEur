@@ -409,7 +409,12 @@
 
 
 
-document.querySelector(".global").style.height=Number((window.innerHeight -80))+"px";
+const global=document.querySelector(".global")
+
+
+global.style.height=Number((window.innerHeight -80))+"px";
+global.style.backgroundSize=100+"%";
+
 
 
         //INPUTS
