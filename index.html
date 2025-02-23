@@ -1,413 +1,642 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        
-        
-        
-         <link rel="icon" href="europeso_favicon.jpg"  type="image/jpg" />
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <style type="text/css" media="all">
-            .b{
-                
-                
-                
-                border: solid black 1px;
-                
-                width: 340px;
-                height: 150px;
-                margin-top: 80px;
-                border-radius: 12px;
-                
-                background: linear-gradient(to bottom, pink,purple);
-            }
-            .b button{
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-                
-        
-            
-                color: white;
+
+
+    <link rel="icon" href="europeso_favicon.jpg" type="image/jpg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <style type="text/css" media="all">
+    
+    
+    
+    @font-face {
+    font-family:'lucky';
+    src: url("LuckiestGuy-Regular.ttf");
+
+
+
+}
+    
+    
+    
+        .b {
+
+
+
+            border: solid black 1px;
+
+            width: 340px;
+            height: 150px;
+            margin-top: 80px;
+            border-radius: 12px;
+
+            background: linear-gradient(to bottom, pink, magenta,purple);
+
+            opacity: 0.7;
+
+        }
+
+
+
+
+
+        .selectedShine {
+
+
+
+            background: linear-gradient(to bottom, dodgerblue, pink,pink);
+
+            box-shadow: 0 0 20px 0 white,0 0 30px 0 white,0 0 20px 0 purple,0 0 20px 0 magenta;
+            ,0 0 30px 0 magenta, 0 20px 0 dodgerblue;
+
+            transition: all 0.5s;
+            border: solid 3.5px white;
+            animation: selection 0.2s forwards linear;
+        }
+
+@keyframes selection {
+
+
+
+
+            50% {
+
+
+                transform: scale(1.5);
             }
-            
-            
-            
-             .b input{
-                
-                              
-      border-radius: 26px 0px 0px 26px ;
-        outline: none;
+
+
+            100% {
+
+                transform: scale(1);
+
+            }
+        }
+        .b button {
+
+
+
+
+            color: white;
+        }
+
+
+
+        .b input {
+
+
+            border-radius: 26px 0px 0px 26px;
+            outline: none;
             border: none;
-            border-bottom: solid 0.5px ;
+            border-bottom: solid 0.5px;
             font-weight: bold;
-            }
-            
-        
-            .buttEuro{
-                
-                
-                border-radius: 26px;
- background-image:linear-gradient(to left,black,black,white);
-                margin-left: 75px;
-                font-weight: bold;
-                padding: 0px 30px;
-                font-size: 20px;
-                
-        
-            }
-          .del{
-background-image:linear-gradient(to left,black,black,white);
-              width: 50px;
-              
-         border-radius:0px 26px 26px 0px;
-              border: none;
-              
-          }
-            
-            .b p{
-                
-                
-                
-                
-                font-weight: bold;
-                font-size: 20px
-            }
-            
-            .resWrap{
-                
-                
-                
-                display: flex;
-                flex-wrap: wrap;
-                
-                
-                align-items: center;
-                
-                justify-content: center;
-                
-                width: 340px;
-            }
-            
-            .pAnimator{
-                
-                color: black;
-                
-                
-                
-                
-                
-                
-        animation-name: anime;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-direction: forward;
-            }
-            
-            @keyframes anime{
-                
-                
-                
+        }
+
+
+        .buttEuro {
+
+
+            border-radius: 26px;
+            background-image: linear-gradient(to left,black,black,white);
+            margin-left: 75px;
+            font-weight: bold;
+            padding: 0px 30px;
+            font-size: 20px;
+
+
+        }
+        .del {
+            background-image: linear-gradient(to left,black,black,white);
+            width: 50px;
+
+            border-radius: 0px 26px 26px 0px;
+            border: none;
+
+        }
+
+        .b p {
+
+
+
+
+            font-weight: bold;
+            font-size: 20px
+        }
+
+        .resWrap {
+
+
+
+            display: flex;
+            flex-wrap: wrap;
+
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 340px;
+        }
+
+        .pAnimator {
+
+            color: black;
+
+
+
+
+
+
+            animation-name: anime;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-direction: forward;
+        }
+
+@keyframes anime {
+
+
+
             from {
                 color: black;
-                
+
                 font-size: 9px;
             }
-            to{
+            to {
                 color: white;
-                
-                                
+
+
                 font-size: 55px;
             }
-            }
-            
-            nav{
-                
-                display: flex;
-                border: solid 1px white;
-                
-                justify-content: space-between;
-                
-                align-items: left;
-                width: 100%;
-                
-            }
-            
-            .title{
-                
-                font-style: italic;
-                color: white;
-                
-            }
-            
+        }
+
+        nav {
+
+            display: flex;
+            border: solid 1px white;
+
+            justify-content: space-between;
+
+            align-items: left;
+            width: 100%;
+            height: 80px;
+            background: black;
+
+
+        }
+
+        .title {
+
+            font-style: italic;
+            color: white;
+
+        }
+
+
+        .eu {
+
+
+
+            width: 70px;
+            height: 30px;
+
+            border-radius: 50px;
+
+            border: solid white 1px;
+        }
+
+        .ph {
+            margin-top: 5px;
+            border: solid white 1px;
+            width: 70px;
+            height: 30px;
+
+            border-radius: 20px;
+
+        }
+
+
+        body {
+
+
+            background: black;
+
+
+
+        }
+
+        .global {
+
+
+
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+
+            background: linear-gradient(to right, black, black, black, white, pink);
+            background-image: url("backgroundDream.jpg");
+
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            background-position: center left;
+        }
+
+
+        .avatar {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+
+            border: solid white;
+            background-attachment: transparent;
+
+            background-image: url("dugo.png");
+
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+        .woof {
+            position: absolute;
+            font-family: lucky;
+            left: 10%;
+            top: 50px;
+            color: dodgerblue;
+
+
+            text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white;
+            0 0 2px white;;
+
+
+
+            transform: rotate(-25deg) scale(1.5);
+
+            transition: all 1s linear;
+            z-index: 100;
+            animation: wooof 1s forwards linear;
+        }
         
-            .eu{
-                
-                
-                
-                width: 70px;
-                height: 30px;
-                
-              border-radius: 50px;
-              
-              border: solid white 1px ;
-            }
-            
-            .ph{
-                margin-top: 5px;
-                  border: solid white 1px;       
-                width: 70px;
-                height: 30px;
-                
-              border-radius: 20px;
-                
-            }
-            
-            
-            body{
-                display: flex;
-                flex-direction: column;
-                
-                align-items: center;
-              ;
-                background: linear-gradient(to bottom, black,dodgerblue);
-            }
         
-        </style>
-        
-    </head>
-    <body>
-        
-        
-        
+   @keyframes wooof{
+       
+       
+       
+       16%{
+           opacity: 1;
+           
+           
+       }
+       
+       33%{
+           
+           
+           opacity: 0;
+       }
+       
+       
+       49%{
+           
+           opacity: 1;
+           
+       }
+       66%{
+           opacity: 0;
+           
+           
+       }
+       
+       100%{
+            opacity: 1;
+       }
+       
+   }
+    </style>
+
+</head>
+<body>
+    <div class="global">
+
+
+
         <nav class="nav">
-            
+
+            <div onclick="woof()" class="avatar">
+
+            </div>
+
             <h1 class="title">Sol You-nio Gokz</h1>
-         <div    style="display:flex;flex-direction:column" class="">
-             
-          <img class="eu" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="" />
-          
-<img class="ph" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" />
-          
-                   </div>  
+            <div style="display:flex;flex-direction:column" class="">
+
+                <img class="eu" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="" />
+
+                <img class="ph" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" />
+
+            </div>
         </nav>
         <div class="euroToPeso b">
-         <div style="width:340px;margin-left:60px; margin-top:20px">
-             
-          <input type="text"  placeholder="Euros..." class="euroToPesoInput"/>
-            
-            
-            
-            <button    onclick="clearInputEuros()" class="deleteEuro del" type="submit">×</button>  
-            
-                     </div>  
+            <div style="width:340px;margin-left:60px; margin-top:20px">
+
+                <input type="text" placeholder="Euros..." class="euroToPesoInput" />
+
+
+
+                <button onclick="clearInputEuros()" class="deleteEuro del" type="submit">×</button>
+
+            </div>
             <br />
-            
+
             <button onclick="euroToPesoInput()" class="buttEuro" type="submit">Convert to ₱ 🇵🇭</button>
-            
-            
-        
-            
-        
-        
-   <div class="resWrap">
-       
-        <p class="pesosResult"></p>
-           </div>
+
+
+
+
+
+
+            <div class="resWrap">
+
+                <p class="pesosResult"></p>
+            </div>
         </div>
-        
-        
+
+
         <div class="pesoToEuro b">
-            
-            
-            
-   <div style="width:340px;margin-left:60px;margin-top:20px"> 
-            
-          <input type="text"  placeholder="Pesos..." class="pesoToEuroInput"/>
-            
-          <button  onclick="clearInputPesos()"   class="deletePeso del" type="submit">×</button>  
-         </div>
-           
-            
+
+
+
+            <div style="width:340px;margin-left:60px;margin-top:20px">
+
+                <input type="text" placeholder="Pesos..." class="pesoToEuroInput" />
+
+                <button onclick="clearInputPesos()" class="deletePeso del" type="submit">×</button>
+            </div>
+
+
             <br />
-  <button onclick="pesoToEuroInput()" class="buttEuro" type="submit">convert to € 🇪🇺 </button>
-            
-            
-            
-           <div class="resWrap">
-            <p class="eurosResult"></p>
-            
-            
-                    </div>
-        
+            <button onclick="pesoToEuroInput()" class="buttEuro" type="submit">convert to € 🇪🇺 </button>
+
+
+
+            <div class="resWrap">
+                <p class="eurosResult"></p>
+
+
+            </div>
+
         </div>
-        
-        
-        
-        
-        <script type="text/javascript" charset="utf-8">
-            const PESO= 62.1009;
-            const EURO =1/PESO;
-            
-            
-  //INPUTS          
- const euroInput= document.querySelector(".euroToPesoInput");
- 
- 
- const pesoInput= document.querySelector(".pesoToEuroInput");
- 
- 
- 
- //RESULTS
- 
- 
-  const pesoResult= document.querySelector(".pesosResult");
- const euroResult= document.querySelector(".eurosResult");
- 
- 
-      
- 
- let attentionTo="";
+
+    </div>
 
 
 
-
-
- euroInput.addEventListener("click",()=>{
-    attentionTo="one";
- });
-            
-     
- 
-
-
- pesoInput.addEventListener("click",()=>{
-    attentionTo="two";
- });
+    <script type="text/javascript" charset="utf-8">
+        const PESO = 62.1009;
+        const EURO = 1/PESO;
 
 
 
 
 
 
-         
-  
-            
-            
-      function    euroToPesoInput()  {
-          
-        let res=  euroInput.value *PESO;
-        
-        
-        
-         let resFinal=    res.toFixed(1);
-          pesoResult.innerText= resFinal+" ₱";
-          
-          
-          console.log( "peso Result: ",res);
-
-          console.log( attentionTo);
-
-          pesoResult.classList.add("pAnimator");
+        //INPUTS
+        const euroInput = document.querySelector(".euroToPesoInput");
 
 
-          setTimeout(()=>{
+        const pesoInput = document.querySelector(".pesoToEuroInput");
 
-            pesoResult.classList.remove("pAnimator");
 
-          },2100)
 
-          
-      }
+        //RESULTS
+
+
+        const pesoResult = document.querySelector(".pesosResult");
+        const euroResult = document.querySelector(".eurosResult");
 
 
 
 
 
+        //WRAPS
+        const euroToPesoWrap = document.querySelector(".euroToPeso");
+
+
+        const pesoToEuroWrap = document.querySelector(".pesoToEuro");
+
+
+        let chosenTop = false;
+
+        let chosenBottom = false;
+
+
+
+        let attentionTo = "";
 
 
 
 
+        function woof() {
+            let wooof = document.createElement("h3");
+            wooof.className = "woof";
+
+            wooof.innerText = "WOOOOFFFF !!!";
+
+            document.body.appendChild(wooof);
+        new Audio("pusonimommy.mp3").play();
+
+            console.log("fuck wooofff bitch hoe ");
+            setTimeout(()=> {
+
+                wooof.remove();
+
+            }, 1200);
 
 
 
+        }
+        euroInput.addEventListener("click", ()=> {
+            attentionTo = "one";
 
 
-      function pesoToEuroInput(){
-               
-               let res= pesoInput.value * EURO;
-               
-              let resFinal= res.toFixed(1);
-                        
-                   euroResult.innerText= resFinal+" €";
-                         console.log( "Euro Result: ",res);
-          
-                         console.log( attentionTo,"   lefa k?");
-          
-                         
-                         
-                         euroResult.classList.add("pAnimator");
-          
-          
-                         setTimeout(()=>{
-          
-          euroResult.classList.remove("pAnimator");
-          
-          },2100)
-          
-          
-          
-                         
-                     } 
-                      
-            
-            function clearInputEuros(){
-                
-                
-                euroInput.value="";
-                
-                pesoResult.innerText="";
-                
-                
+
+            euroToPesoWrap.className = "b selectedShine";
+
+
+            pesoToEuroWrap.className = "b";
+            if (!chosenTop) {
+
+
+                new Audio("zako.mp3").play();
             }
-            
-            
-            function clearInputPesos(){
-                
-                pesoInput.value="";
-                euroResult.innerText="";
-                
+            chosenTop = true;
+            chosenBottom = false;
+        });
+
+
+
+
+
+        pesoInput.addEventListener("click", ()=> {
+            attentionTo = "two";
+
+
+            pesoToEuroWrap.className = "b selectedShine";
+
+
+
+            if (!chosenBottom) {
+
+                euroToPesoWrap.className = "b";
+                new Audio("zako.mp3").play();
+
             }
 
+            chosenBottom = true;
+            chosenTop = false;
+        });
 
 
 
-            document.addEventListener("keydown",e=>{
-
-                console.log(e.key);
-
-                if(e.key==="Enter"){
-
-                    if(attentionTo==="one"){
-
-                   euroToPesoInput();
 
 
-                    }
-                    else if(attentionTo==="two"){
 
-                        pesoToEuroInput();
 
-                    }
+
+
+
+        function euroToPesoInput() {
+
+            let res = euroInput.value *PESO;
+
+
+
+            let resFinal = res.toFixed(1);
+            pesoResult.innerText = resFinal+" ₱";
+
+
+            console.log("peso Result: ",
+                res);
+
+            console.log(attentionTo);
+
+            pesoResult.classList.add("pAnimator");
+
+
+            setTimeout(()=> {
+
+                pesoResult.classList.remove("pAnimator");
+
+            },
+                2100)
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function pesoToEuroInput() {
+
+            let res = pesoInput.value * EURO;
+
+            let resFinal = res.toFixed(1);
+
+            euroResult.innerText = resFinal+" €";
+            console.log("Euro Result: ",
+                res);
+
+            console.log(attentionTo,
+                "   lefa k?");
+
+
+
+            euroResult.classList.add("pAnimator");
+
+
+            setTimeout(()=> {
+
+                euroResult.classList.remove("pAnimator");
+
+            },
+                2100)
+
+
+
+
+        }
+
+
+        function clearInputEuros() {
+
+
+            euroInput.value = "";
+
+            pesoResult.innerText = "";
+
+
+        }
+
+
+        function clearInputPesos() {
+
+            pesoInput.value = "";
+            euroResult.innerText = "";
+
+        }
+
+
+
+
+        document.addEventListener("keydown", e=> {
+
+            console.log(e.key);
+
+            if (e.key === "Enter") {
+
+                if (attentionTo === "one") {
+
+                    euroToPesoInput();
+
+
+                } else if (attentionTo === "two") {
+
+                    pesoToEuroInput();
+
                 }
+            }
 
-            });
+        });
 
 
-            
-            
-        </script>
-    </body>
+        new Audio("seagullsParadise.mp3").play();
+
+        window.addEventListener("load", ()=> {
+            new Audio("seagullsParadise.mp3").play();
+
+            console.log("bitch loaded");
+        });
+
+    </script>
+</body>
 </html>
