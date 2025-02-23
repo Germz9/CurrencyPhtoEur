@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        
+        
+        
+         <link rel="icon" href="europeso_favicon.jpg"  type="image/jpg" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <style type="text/css" media="all">
+            .b{
+                
+                
+                
+                border: solid black 1px;
+                
+                width: 340px;
+                height: 150px;
+                margin-top: 80px;
+                border-radius: 12px;
+                
+                background: linear-gradient(to bottom, pink,purple);
+            }
+            .b button{
+
+                
+        
+            
+                color: white;
+            }
+            
+            
+            
+             .b input{
+                
+                              
+      border-radius: 26px 0px 0px 26px ;
+        outline: none;
+            border: none;
+            border-bottom: solid 0.5px ;
+            font-weight: bold;
+            }
+            
+        
+            .buttEuro{
+                
+                
+                border-radius: 26px;
+ background-image:linear-gradient(to left,black,black,white);
+                margin-left: 75px;
+                font-weight: bold;
+                padding: 0px 30px;
+                font-size: 20px;
+                
+        
+            }
+          .del{
+background-image:linear-gradient(to left,black,black,white);
+              width: 50px;
+              
+         border-radius:0px 26px 26px 0px;
+              border: none;
+              
+          }
+            
+            .b p{
+                
+                
+                
+                
+                font-weight: bold;
+                font-size: 20px
+            }
+            
+            .resWrap{
+                
+                
+                
+                display: flex;
+                flex-wrap: wrap;
+                
+                
+                align-items: center;
+                
+                justify-content: center;
+                
+                width: 340px;
+            }
+            
+            .pAnimator{
+                
+                color: black;
+                
+                
+                
+                
+                
+                
+        animation-name: anime;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-direction: forward;
+            }
+            
+            @keyframes anime{
+                
+                
+                
+            from {
+                color: black;
+                
+                font-size: 9px;
+            }
+            to{
+                color: white;
+                
+                                
+                font-size: 55px;
+            }
+            }
+            
+            nav{
+                
+                display: flex;
+                border: solid 1px white;
+                
+                justify-content: space-between;
+                
+                align-items: left;
+                width: 100%;
+                
+            }
+            
+            .title{
+                
+                font-style: italic;
+                color: white;
+                
+            }
+            
+        
+            .eu{
+                
+                
+                
+                width: 70px;
+                height: 30px;
+                
+              border-radius: 50px;
+              
+              border: solid white 1px ;
+            }
+            
+            .ph{
+                margin-top: 5px;
+                  border: solid white 1px;       
+                width: 70px;
+                height: 30px;
+                
+              border-radius: 20px;
+                
+            }
+            
+            
+            body{
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+              ;
+                background: linear-gradient(to bottom, black,dodgerblue);
+            }
+        
+        </style>
+        
+    </head>
+    <body>
+        
+        
+        
+        <nav class="nav">
+            
+            <h1 class="title">Sol You-nio Gokz</h1>
+         <div    style="display:flex;flex-direction:column" class="">
+             
+          <img class="eu" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="" />
+          
+<img class="ph" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" />
+          
+                   </div>  
+        </nav>
+        <div class="euroToPeso b">
+         <div style="width:340px;margin-left:60px; margin-top:20px">
+             
+          <input type="text"  placeholder="Euros..." class="euroToPesoInput"/>
+            
+            
+            
+            <button    onclick="clearInputEuros()" class="deleteEuro del" type="submit">×</button>  
+            
+                     </div>  
+            <br />
+            
+            <button onclick="euroToPesoInput()" class="buttEuro" type="submit">Convert to ₱ 🇵🇭</button>
+            
+            
+        
+            
+        
+        
+   <div class="resWrap">
+       
+        <p class="pesosResult"></p>
+           </div>
+        </div>
+        
+        
+        <div class="pesoToEuro b">
+            
+            
+            
+   <div style="width:340px;margin-left:60px;margin-top:20px"> 
+            
+          <input type="text"  placeholder="Pesos..." class="pesoToEuroInput"/>
+            
+          <button  onclick="clearInputPesos()"   class="deletePeso del" type="submit">×</button>  
+         </div>
+           
+            
+            <br />
+  <button onclick="pesoToEuroInput()" class="buttEuro" type="submit">convert to € 🇪🇺 </button>
+            
+            
+            
+           <div class="resWrap">
+            <p class="eurosResult"></p>
+            
+            
+                    </div>
+        
+        </div>
+        
+        
+        
+        
+        <script type="text/javascript" charset="utf-8">
+            const PESO= 62.1009;
+            const EURO =1/PESO;
+            
+            
+  //INPUTS          
+ const euroInput= document.querySelector(".euroToPesoInput");
+ 
+ 
+ const pesoInput= document.querySelector(".pesoToEuroInput");
+ 
+ 
+ 
+ //RESULTS
+ 
+ 
+  const pesoResult= document.querySelector(".pesosResult");
+ const euroResult= document.querySelector(".eurosResult");
+ 
+ 
+      
+ 
+ let attentionTo="";
+
+
+
+
+
+ euroInput.addEventListener("click",()=>{
+    attentionTo="one";
+ });
+            
+     
+ 
+
+
+ pesoInput.addEventListener("click",()=>{
+    attentionTo="two";
+ });
+
+
+
+
+
+
+         
+  
+            
+            
+      function    euroToPesoInput()  {
+          
+        let res=  euroInput.value *PESO;
+        
+        
+        
+         let resFinal=    res.toFixed(1);
+          pesoResult.innerText= resFinal+" ₱";
+          
+          
+          console.log( "peso Result: ",res);
+
+          console.log( attentionTo);
+
+          pesoResult.classList.add("pAnimator");
+
+
+          setTimeout(()=>{
+
+            pesoResult.classList.remove("pAnimator");
+
+          },2100)
+
+          
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function pesoToEuroInput(){
+               
+               let res= pesoInput.value * EURO;
+               
+              let resFinal= res.toFixed(1);
+                        
+                   euroResult.innerText= resFinal+" €";
+                         console.log( "Euro Result: ",res);
+          
+                         console.log( attentionTo,"   lefa k?");
+          
+                         
+                         
+                         euroResult.classList.add("pAnimator");
+          
+          
+                         setTimeout(()=>{
+          
+          euroResult.classList.remove("pAnimator");
+          
+          },2100)
+          
+          
+          
+                         
+                     } 
+                      
+            
+            function clearInputEuros(){
+                
+                
+                euroInput.value="";
+                
+                pesoResult.innerText="";
+                
+                
+            }
+            
+            
+            function clearInputPesos(){
+                
+                pesoInput.value="";
+                euroResult.innerText="";
+                
+            }
+
+
+
+
+            document.addEventListener("keydown",e=>{
+
+                console.log(e.key);
+
+                if(e.key==="Enter"){
+
+                    if(attentionTo==="one"){
+
+                   euroToPesoInput();
+
+
+                    }
+                    else if(attentionTo==="two"){
+
+                        pesoToEuroInput();
+
+                    }
+                }
+
+            });
+
+
+            
+            
+        </script>
+    </body>
+</html>
