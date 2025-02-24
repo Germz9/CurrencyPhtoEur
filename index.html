@@ -261,18 +261,54 @@
             border-radius: 50%;
 
             border: solid white;
-            background-attachment: transparent;
+           
+            
 
-            background-image: url("Dugo.png");
-
-
+        background: linear-gradient(to right,transparent, transparent ,transparent), url("Dugo.png") no-repeat center, lightblue;
 
             background-repeat: no-repeat;
             background-size: cover;
         }
 
+.animaAvatar{
+    
+    
+    animation:animavatar 1s forwards ease-out;
+}
 
 
+@keyframes animavatar{
+                16% {
+                border: solid dodgerblue;
+
+
+            }
+
+            33% {
+
+
+                border:solid white;
+            }
+
+
+            49% {
+
+border:solid dodgerblue;
+
+            }
+            66% {
+                border:solid white;
+
+
+            }
+
+            100% {
+border:solid dodgerblue;
+            }
+    
+    
+    
+}
         .woof {
             position: absolute;
             font-family: lucky;
@@ -419,6 +455,7 @@ const global=document.querySelector(".global")
 global.style.height=Number((window.innerHeight ))+"px";
 global.style.backgroundSize=100+"%";
 
+const avatar= document.querySelector(".avatar");
 
 
         //INPUTS
@@ -467,9 +504,14 @@ global.style.backgroundSize=100+"%";
             new Audio("pusonimommy.mp3").play();
 
             console.log("fuck wooofff bitch hoe ");
+            
+            
+            
+            avatar.className="avatar animaAvatar";
             setTimeout(()=> {
 
                 wooof.remove();
+                avatar.className="avatar";
 
             }, 1200);
 
